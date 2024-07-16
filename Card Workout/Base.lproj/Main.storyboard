@@ -11,6 +11,7 @@
         <!--Card SelectionVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="CardSelectionVC" customModule="Card_Workout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -61,6 +62,10 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rulesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRk-Z5-Cfy"/>
+                                    <segue destination="DAN-Wc-wI7" kind="presentation" id="9ZO-2L-Ix8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -76,10 +81,68 @@
                             <constraint firstItem="O7H-CG-BcM" firstAttribute="top" secondItem="Y3v-8O-nlA" secondAttribute="bottom" constant="20" id="vhM-a4-YFV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="Cbo-QT-49k" id="4Jx-bY-EUi"/>
+                        <outletCollection property="buttons" destination="Y3v-8O-nlA" collectionClass="NSMutableArray" id="mH2-vV-fhl"/>
+                        <outletCollection property="buttons" destination="O7H-CG-BcM" collectionClass="NSMutableArray" id="dtp-8e-XXv"/>
+                        <outletCollection property="buttons" destination="7Ly-qw-YdI" collectionClass="NSMutableArray" id="zNa-5k-OrW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="56" y="4"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mZd-lm-l9r">
+            <objects>
+                <viewController id="DAN-Wc-wI7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1H2-Zx-Fgg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I06-ln-ugG">
+                                <rect key="frame" x="30" y="150" width="333" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The value of each represents the number of exercise you have to do!  🃏 = 11, 👸🏻 = 12, 🤴🏻 = 13, A = 14" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ros-sL-ox2">
+                                <rect key="frame" x="30" y="206" width="333" height="95.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♠️ = Push-up  ❤️ = Sit-up  ♣️ = Burpees  ♦️ = Jumping Jacks " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htd-56-Nkb">
+                                <rect key="frame" x="96.666666666666686" y="376.66666666666669" width="200" height="200.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="EeJ-pB-Vdb"/>
+                                    <constraint firstAttribute="height" constant="200" id="nzx-0J-xJL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NJt-Ht-zuC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="htd-56-Nkb" firstAttribute="top" secondItem="Ros-sL-ox2" secondAttribute="bottom" constant="75" id="4yT-Ga-GmE"/>
+                            <constraint firstItem="Ros-sL-ox2" firstAttribute="top" secondItem="I06-ln-ugG" secondAttribute="bottom" constant="8" id="Jrm-fR-ojB"/>
+                            <constraint firstItem="Ros-sL-ox2" firstAttribute="leading" secondItem="NJt-Ht-zuC" secondAttribute="leading" constant="30" id="Kze-nc-EfH"/>
+                            <constraint firstItem="htd-56-Nkb" firstAttribute="centerX" secondItem="1H2-Zx-Fgg" secondAttribute="centerX" id="LTN-Pn-LbQ"/>
+                            <constraint firstItem="I06-ln-ugG" firstAttribute="top" secondItem="NJt-Ht-zuC" secondAttribute="top" constant="150" id="SGV-Ef-16a"/>
+                            <constraint firstItem="I06-ln-ugG" firstAttribute="top" secondItem="NJt-Ht-zuC" secondAttribute="top" constant="150" id="SYZ-J2-dgg"/>
+                            <constraint firstItem="NJt-Ht-zuC" firstAttribute="trailing" secondItem="Ros-sL-ox2" secondAttribute="trailing" constant="30" id="THU-xy-Puh"/>
+                            <constraint firstItem="I06-ln-ugG" firstAttribute="leading" secondItem="NJt-Ht-zuC" secondAttribute="leading" constant="30" id="cfr-48-OAW"/>
+                            <constraint firstItem="htd-56-Nkb" firstAttribute="centerX" secondItem="1H2-Zx-Fgg" secondAttribute="centerX" id="mPE-GF-yh5"/>
+                            <constraint firstItem="NJt-Ht-zuC" firstAttribute="trailing" secondItem="I06-ln-ugG" secondAttribute="trailing" constant="30" id="om1-WT-ehl"/>
+                            <constraint firstItem="htd-56-Nkb" firstAttribute="top" secondItem="Ros-sL-ox2" secondAttribute="bottom" constant="75" id="tuy-47-GYN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OsV-db-vqs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcW-qi-WeS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="4"/>
         </scene>
     </scenes>
     <resources>
